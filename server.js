@@ -53,6 +53,6 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
 	res.send(roll(sides,dice, rolls));
 }
 
-
+app.listen(port); 
 
 
