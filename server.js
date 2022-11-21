@@ -28,29 +28,29 @@ app.get('/app/roll/', (req, res) => {
 
 //endpoint app accept
 app.use('/app/roll/', (req, res, next) => {
-	sides = parseInt(req.params.sides); 
-	dice = paraseInt(req.params.dice);
-	rolls = parseInt(req.params.rolls); 
+	let sides = parseInt(req.params.sides); 
+	let dice = paraseInt(req.params.dice);
+	let rolls = parseInt(req.params.rolls); 
 	res.send(roll(sides,dice,rolls)).end() ;
 }); 
 
 //endpoint sides
 app.get('/app/roll/:sides/', (req, res, next) => {
-	sides = parseInt(req.params.sides);
+	let sides = parseInt(req.params.sides);
 	res.send(roll(sides, 2, 1)).end();
 }); 
 
 //endpoint sides, dice
 app.get('/app/roll/:sides/:dice/', (req, res, next) => {
-	sides = parseInt(req.params.sides);
-	dice = parseInt(req.params.dice);
+	let sides = parseInt(req.params.sides);
+	let dice = parseInt(req.params.dice);
 	res.send(roll(sides,dice, 1)).end();
 }); 
 // endpoint sides, dice, and roll
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
-	sides = parseInt(req.params.sides);
-	dice = parseInt(req.params.dice);
-	rolls = parseInt(req.params.rolls);
+	let sides = parseInt(req.params.sides);
+	let dice = parseInt(req.params.dice);
+	let rolls = parseInt(req.params.rolls);
 	res.send(roll(sides,dice, rolls)).end();
 }); 
 //404 not found
