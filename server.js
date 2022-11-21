@@ -10,7 +10,7 @@ const args = minimist(process.argv.slice(2));
 app.use(express.json());  
 app.use(express.urlencoded({extended:true})); 
 //const port = args.port ? args.port: 5000
-vars port = 5000;
+let port = 5000;
 if(args.port){
 	port = args.port;
 }
@@ -27,10 +27,10 @@ app.get('/app/roll/', (req, res) => {
 }); 
 
 //endpoint app accept
-app.use('/app/roll/', (req, res, next) => {
-	let sides = parseInt(req.params.sides); 
-	let dice = paraseInt(req.params.dice);
-	let rolls = parseInt(req.params.rolls); 
+app.post('/app/roll/', (req, res, next) => {
+	let sides = parseInt(req.body.sides); 
+	let dice = paraseInt(req.body.dice);
+	let rolls = parseInt(req.body.rolls); 
 	res.send(roll(sides,dice,rolls)).end() ;
 }); 
 
