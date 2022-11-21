@@ -54,7 +54,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
 	res.send(roll(sides,dice, rolls)).end();
 }); 
 //404 not found
-app.use((req, res)  {
+app.use((req, res)=>  {
         res.status(404).send("404 NOT FOUND");
 });
 app.listen(port); 
