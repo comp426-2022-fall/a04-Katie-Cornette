@@ -1,6 +1,6 @@
 import minimist from "minimist" 
 import express from "express"
-import { roll } from "./lib/roll.js"
+import  roll  from './lib/roll.js'
  
 //const express = require('express') 
 const app = express();
@@ -8,10 +8,14 @@ const args = minimist(process.argv.slice(2));
 
 //app.use
 app.use(express.urlencoded({extended:true})); 
-const port = args.port ? args.port: 5000
+//const port = args.port ? args.port: 5000
+let port = 5000;
+if(args.port){
+	port = args.port;
+}
 
 //404 not found
-app.use((req, res) => {
+app.use(function(req, res)  {
 	res.send("404 Not Found");
 }
  
