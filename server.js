@@ -18,4 +18,12 @@ app.get('/app/roll/', (req, res) => {
 	res.send(roll(6,2,1));
 }
 
+//endpoint app accept
+app.get('/app/roll/', (req, res, next) => {
+	sides = parseInt(req.params.sides); 
+	dice = paraseInt(req.params.dice);
+	rolls = parseInt(req.params.dice); 
+	res.send(roll(sides,dice,rolls));
+}
+
 
