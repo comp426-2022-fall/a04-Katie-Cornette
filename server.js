@@ -30,7 +30,7 @@ app.get('/app/roll/', (req, res) => {
 }); 
 
 //endpoint app accept
-app.get('/app/roll/', (req, res, next) => {
+app.use('/app/roll/', (req, res, next) => {
 	sides = parseInt(req.params.sides); 
 	dice = paraseInt(req.params.dice);
 	rolls = parseInt(req.params.rolls); 
