@@ -6,6 +6,8 @@ const express = require('express')
 const app = express();
 const args = minimist(process.argv.slice(2)); 
 
+//app.use
+app.use(express.urlencoded({extended:tre})); 
 const port = args.port ? args.port: 5000
 
 //checking endpoint
