@@ -37,7 +37,7 @@ app.use('/app/roll/', (req, res, next) => {
 //endpoint sides
 app.get('/app/roll/:sides/', (req, res, next) => {
 	sides = parseInt(req.params.sides);
-	res.send(roll(side, 2, 1)).end();
+	res.send(roll(sides, 2, 1)).end();
 }); 
 
 //endpoint sides, dice
@@ -55,7 +55,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
 }); 
 //404 not found
 app.use((req, res)=>  {
-        res.status(404).send("404 NOT FOUND");
+        res.status(404).send("404 NOT FOUND").end(); 
 });
 app.listen(port); 
 
