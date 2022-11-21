@@ -10,7 +10,7 @@ const args = minimist(process.argv.slice(2));
 app.use(express.json());  
 app.use(express.urlencoded({extended:true})); 
 //const port = args.port ? args.port: 5000
-let port = 5000;
+vars port = 5000;
 if(args.port){
 	port = args.port;
 }
