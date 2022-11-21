@@ -7,6 +7,7 @@ const app = express();
 const args = minimist(process.argv.slice(2)); 
 
 //app.use
+app.use(express.json());  
 app.use(express.urlencoded({extended:true})); 
 //const port = args.port ? args.port: 5000
 let port = 5000;
@@ -16,12 +17,12 @@ if(args.port){
 
 //404 not found
 app.use(function(req, res)  {
-	res.send("404 Not Found");
+	res.send("404 NOT FOUND");
 }); 
  
 //checking endpoint
 app.get('/app/', (req, res) => {
-	res.send('200 OK');
+	res.send("200 OK");
 }); 
 
 //endpoint app roll
