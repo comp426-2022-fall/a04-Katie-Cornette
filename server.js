@@ -11,8 +11,10 @@ app.use(express.urlencoded({extended:true}));
 const port = args.port ? args.port: 5000
 
 //404 not found
-app.use(funciton, (req, res) => {
-	res.send("404 Not Found"); 
+app.use((req, res) => {
+	res.send("404 Not Found");
+}
+ 
 //checking endpoint
 app.get('/app/', (req, res) => {
 	res.send('200 OK');
