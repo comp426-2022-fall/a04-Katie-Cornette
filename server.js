@@ -17,7 +17,7 @@ if(args.port){
 //404 not found
 app.use(function(req, res)  {
 	res.send("404 Not Found");
-}
+}); 
  
 //checking endpoint
 app.get('/app/', (req, res) => {
@@ -27,7 +27,7 @@ app.get('/app/', (req, res) => {
 //endpoint app roll
 app.get('/app/roll/', (req, res) => {
 	res.send(roll(6,2,1));
-}
+}); 
 
 //endpoint app accept
 app.get('/app/roll/', (req, res, next) => {
@@ -35,27 +35,27 @@ app.get('/app/roll/', (req, res, next) => {
 	dice = paraseInt(req.params.dice);
 	rolls = parseInt(req.params.rolls); 
 	res.send(roll(sides,dice,rolls));
-}
+}); 
 
 //endpoint sides
 app.get('/app/roll/:sides/', (req, res, next) => {
 	sides = parseInt(req.params.sides);
 	res.send(roll(side, 2, 1));
-}
+}); 
 
 //endpoint sides, dice
 app.get('/app/roll/:sides/:dice/', (req, res, next) => {
 	sides = parseInt(req.params.sides);
 	dice = parseInt(req.params.dice);
 	res.send(roll(sides,dice, 1));
-}
+}); 
 // endpoint sides, dice, and roll
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res, next) => {
 	sides = parseInt(req.params.sides);
 	dice = parseInt(req.params.dice);
 	rolls = parseInt(req.params.rolls);
 	res.send(roll(sides,dice, rolls));
-}
+}); 
 
 app.listen(port); 
 
